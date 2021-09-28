@@ -1,4 +1,117 @@
-.newclass {
-  background-color: rgb(251, 255, 0);
-  
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
 }
+
+body {
+  min-height: 450px;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: lightblue;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.maincontainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+}
+
+.input-part form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1.5px solid black;
+  padding: 0 10px 0 5px;
+}
+
+.input-part form > * {
+  background: transparent;
+  border: none;
+  height: 35px;
+}
+
+.input-part ul.todos {
+  margin-left: 0;
+  padding: 0;
+  letter-spacing: none;
+  height: 220px;
+  overflow: auto;
+}
+
+.input-part li {
+  user-select: none;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-part li i {
+  color: #6c717b;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.input-part input[type="checkbox"] {
+  display: non;
+}
+
+.input-part input[type="checkbox"] + label {
+  color: #6c717b;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 5px 5px 5px 30px;
+}
+
+.input-part input[type="checkbox"] + label span.check {
+  left: 4px;
+  top: 50%;
+  position: absolute;
+  text-replace: tranlate(-50%);
+  width: 18px;
+  height: 18px;
+  display: block;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #b8bfcc;
+  box-shadow: 0 2px 3px #f0f4f8;
+}
+
+.input-part input[type="checkbox"]:checked + label {
+  color: #aeb7c6;
+  text-decoration: line-through;
+}
+
+.input-part input[type="checkbox"]:checked + label span.check {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.input-part input[type="checkbox"]:checked + label span.check::after {
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+
+
+
