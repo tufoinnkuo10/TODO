@@ -2,36 +2,36 @@
 
 # Project Name
 
-Awesome Books
+To do list
 
-> This project is designed to add and remove Books added to the local storage with the use of classes.
-> ![screenshot](./image/readme.png)
+> This project is designed to display a list of activities to be fufiled in a day. it is made possible with the use of webpack
+> ![screenshot](./image/todo.png)
 
 Additional description about the project and its features.
 
-- Books are being added in order
-- Books are also being removed respectively
-- All the books are being stored in the local storage unless when it is removed.
-- Books won't be added unless both author and title fields are filled.
+- Activities are in order
+- They follow a particular index pattern
+- All activities are called from an aray.
 
 ## Built With
 
-- github
-- Javascript
-- html
-- Css
+- ![](https://img.shields.io/badge/Github-blueviolet)
+- ![](https://img.shields.io/badge/Javascript-blue)
+- ![](https://img.shields.io/badge/HTML-purple) 
+- ![](https://img.shields.io/badge/CSS-blue)
+- ![](https://img.shields.io/badge/WEBPACK-violet)
 
-## Authors
 
-👤 **Tufoin**
-**Marc Raphael ESSOGO BIDZOGO**
-**mucyo claude**
+
+👤 **Author**
+- Name: Tufoin Nkuo
+- GitHub: [@tufoinnkuo10](https://github.com/tufoinnkuo10)
+- Twitter: [@itztenten](https://twitter.com/itztenten)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tufoin-nkuo-3b272320b)
 
 ## 🤝 Contributing
 
-## 
 
-## Marc Raphael
 
 Contributions, issues, and feature requests are welcome!
 
@@ -43,7 +43,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- We thank microverse for the opportunity to work on this project
+- This project is realised thanks to microverse
 
 ## 📝 License
 
