@@ -1,14 +1,29 @@
-import _ from 'lodash';
-import './style.css'
+import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-  element.classList.add('newclass')
+const myTasks = document.querySelector('.task-list');
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const taskArray = [
+  {
+    description: 'sports',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'code',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'sleep',
+    completed: false,
+    index: 2,
+  },
+];
 
-  return element;
-}
-
-document.body.appendChild(component());
+const showTasks = (tasks) => `
+<li>
+<input type="checkbox" name="" class="static-list" ${tasks.index}">
+<label for="">${tasks.description}<i class="fas fa-ellipsis-v"></i></label>
+</li>
+`;
+myTasks.innerHTML = taskArray.map((tasks) => showTasks(tasks)).join('');

@@ -1,4 +1,80 @@
-.newclass {
-  background-color: rgb(251, 255, 0);
-  
+.main-container {
+  margin-left: 50%;
+  margin-right: 15%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  transform: translateX(-50%);
+  border: 1px solid rgb(245, 245, 245);
+  box-shadow: 3px 2px 10px grey;
+}
+
+main header h3 {
+  border-bottom: 2px solid rgb(110, 109, 109);
+  padding: 1rem 0;
+  padding-left: 0.8rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+label > i,
+main header h3 > i {
+  float: right;
+  margin-right: 2rem;
+}
+
+.add-task {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid rgb(221, 220, 220);
+}
+
+.icon {
+  margin-right: 2rem;
+}
+
+.add-task input {
+  outline: none;
+  padding: 1rem 0;
+  padding-left: 0.8rem;
+  border: none;
+  width: 97%;
+  font-style: italic;
+  font-size: 16px;
+}
+
+ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: 1px solid rgb(221, 220, 220);
+  padding: 1rem 0;
+  padding-left: 0.8rem;
+}
+
+[type~="checkbox"] {
+  cursor: pointer;
+}
+
+label {
+  margin-left: 0.7rem;
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.clear-task h4 {
+  text-align: center;
+  color: rgb(29, 29, 29);
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+
+.clear-task h4:hover {
+  background-color: rgb(133, 132, 132);
 }
