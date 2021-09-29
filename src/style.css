@@ -1,85 +1,84 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
+.main-container {
+  margin-left: 50%;
+  margin-right: 15%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  transform: translateX(-50%);
+  border: 1px solid rgb(245, 245, 245);
+  box-shadow: 3px 2px 10px grey;
+} 
+
+.heading {
+
 }
 
-body {
-  min-height: 450px;
-  height: 100vh;
-  margin: 0;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: lightblue;
+main header h3 {
+  border-bottom: 2px solid rgb(110, 109, 109);
+  padding: 1rem 0;
+  padding-left: 0.8rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+label > i,
+main header h3 > i {
+  float: right;
+  margin-right: 2rem;
 }
 
-.maincontainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  height: 500px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
-}
-
-.input-part form {
+.add-task {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  border-bottom: 1.5px solid black;
-  padding: 0 10px 0 5px;
+  align-items: baseline;
+  border-bottom: 1px solid rgb(221, 220, 220);
 }
 
-.input-part form > * {
-  background: transparent;
+.icon {
+  margin-right: 2rem;
+}
+
+.add-task input {
+  outline: none;
+  padding: 1rem 0;
+  padding-left: 0.8rem;
   border: none;
-  height: 35px;
+  width: 97%;
+  font-style: italic;
+  font-size: 16px;
 }
 
-.input-part ul.todos {
-  margin-left: 0;
-  padding: 0;
-  letter-spacing: none;
-  height: 220px;
-  overflow: auto;
+ul {
+  margin-top: 0;
+  padding-left: 0;
 }
 
-.input-part li {
-  user-select: none;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
+li {
+  list-style-type: none;
+  border-bottom: 1px solid rgb(221, 220, 220);
+  padding: 1rem 0;
+  padding-left: 0.8rem;
 }
 
-.input-part li i {
-  color: #6c717b;
-  font-size: 15px;
+[type~="checkbox"] {
   cursor: pointer;
-  padding: 5px 10px;
 }
 
-.input-part input[type="checkbox"] {
-  display: non;
-}
-
-.input-part input[type="checkbox"] + label {
-  color: #6c717b;
-  font-size: 15px;
+label {
+  margin-left: 0.7rem;
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
   cursor: pointer;
-  position: relative;
-  border-radius: 3px;
-  display: inline-block;
-  padding: 5px 5px 5px 30px;
 }
 
+.clear-task h4 {
+  text-align: center;
+  color: rgb(29, 29, 29);
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
 
-
-
-
+.clear-task h4:hover {
+  background-color: rgb(133, 132, 132);
+}

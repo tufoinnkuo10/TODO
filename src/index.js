@@ -1,21 +1,21 @@
 
 import './style.css'
 
-const allTasks = document.querySelector('.task-list');
+const myTasks = document.querySelector('.task-list');
 
-const listArray = [
+const taskArray = [
   {
-    description: 'Complete To-Do list',
+    description: 'sports',
     completed: false,
     index: 0,
   },
   {
-    description: 'Take a walk',
+    description: 'code',
     completed: false,
     index: 1,
   },
   {
-    description: 'Watch a movie',
+    description: 'sleep',
     completed: false,
     index: 2,
   },
@@ -27,4 +27,4 @@ const showTasks = (tasks) => `
 <label for="">${tasks.description}<i class="fas fa-ellipsis-v"></i></label>
 </li>
 `;
-allTasks.innerHTML = listArray.map((tasks) => showTasks(tasks)).join('');
+myTasks.innerHTML = taskArray.map((tasks) => showTasks(tasks)).join('');

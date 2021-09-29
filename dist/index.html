@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <script defer src="main.js"></script></head>
 <body>
-   <div class="main-container">
-     <ul class="list">
-       <li>sports</li>
-       <li>code </li>
-       <li>eat</li>
-     </ul>
-   </div>
+    <main class="main-container">
+      <header>
+        <h3 class="heading">Today's To-Do!<i class="fas fa-sync-alt"></i></h3>
+      </header>
+      <div class="add-task">
+        <input type="text" placeholder="Add your task here....">
+        <i class="fas fa-level-down-alt icon fa-rotate-90"></i>
+      </div>
+      <div class="show-tasks">
+        <ul class="task-list"></ul>
+      </div>
+      <div class="clear-task">
+        <h4>Clear completed Task</h4>
+      </div>
+    </main>
 </body>
 </html>
