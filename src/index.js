@@ -1,6 +1,6 @@
 import './style.css';
 import { taskCompleted } from './checkbox.js'
-// import { taskCompleted, items } from './checkbox.js';
+// import taskCompleted from './checkbox.js';
 
 const itemsContainer = document.querySelector('.items-container');
 const input = document.createElement('input');

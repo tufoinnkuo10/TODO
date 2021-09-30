@@ -21,5 +21,4 @@ const taskCompleted = (e, items) => {
     }
   }
 };
-// eslint-disable-next-line import/prefer-default-export
 export { taskCompleted };
