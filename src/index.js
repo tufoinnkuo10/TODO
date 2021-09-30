@@ -68,6 +68,28 @@ input.addEventListener('keypress', (e) => {
     const text = document.createElement('p');
     const icon = document.createElement('i');
 
-    
+    div.classList.add('task');
+
+    newItem.description = input.value;
+    newItem.id = items.length + 1;
+    newItem.completed = false;
+
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('checkbox');
+    checkbox.addEventListener('change', taskCompleted);
+
+    text.textContent = input.value;
+
+    icon.classList.add('fas', 'fa-ellipsis-v', 'flex-end');
+
+    div.appendChild(checkbox);
+    div.appendChild(text);
+    div.appendChild(icon);
+
+    itemsContainer.appendChild(div);
+
+    input.value = '';
+    items.push(newItem);
+    localStorage.setItem('items', JSON.stringify(items));
   }
 });
