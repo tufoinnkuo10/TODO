@@ -1,6 +1,5 @@
 import './style.css';
-import { taskCompleted } from './checkbox.js'
-// import taskCompleted from './checkbox.js';
+import { taskCompleted } from './checkbox.js';
 
 const itemsContainer = document.querySelector('.items-container');
 const input = document.createElement('input');
@@ -11,7 +10,7 @@ const deleteCont = document.querySelector('.delete');
 const deleteText = document.createElement('p');
 const icon = document.createElement('i');
 const enter = document.createElement('i');
-//const line= document.createElement('hr');
+//  const line= document.createElement('hr');
 
 input.type = 'text';
 input.setAttribute('placeholder', 'Enter a new task');
@@ -24,7 +23,7 @@ icon.classList.add('fas', 'fa-sync');
 deleteText.classList.add('textdelete');
 title.appendChild(titleText);
 title.appendChild(icon);
-//title.appendChild(line);
+//  title.appendChild(line);
 
 deleteText.textContent = 'Clear all completed';
 deleteCont.appendChild(deleteText);
