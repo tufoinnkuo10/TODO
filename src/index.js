@@ -33,10 +33,10 @@ displayBox();
 
 // add local Storage
 
-const listArraySerialised = JSON.stringify(listArray);
+const taskArraySerialised = JSON.stringify(taskArray);
 
-localStorage.setItem('listArray', listArraySerialised);
+localStorage.setItem('taskArray', taskArraySerialised);
 
-const listArrayDeserialised = JSON.parse(localStorage.getItem('listArray'));
+const taskArrayDeserialised = JSON.parse(localStorage.getItem('taskArray'));
 
-listArrayDeserialised();
+taskArrayDeserialised();
