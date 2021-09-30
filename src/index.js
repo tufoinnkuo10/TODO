@@ -1,4 +1,5 @@
 import './style.css';
+import displayBox from './checkbox.js';
 
 const myTasks = document.querySelector('.task-list');
 
@@ -27,3 +28,15 @@ const showTasks = (tasks) => `
 </li>
 `;
 myTasks.innerHTML = taskArray.map((tasks) => showTasks(tasks)).join('');
+
+displayBox();
+
+// add local Storage
+
+const listArraySerialised = JSON.stringify(listArray);
+
+localStorage.setItem('listArray', listArraySerialised);
+
+const listArrayDeserialised = JSON.parse(localStorage.getItem('listArray'));
+
+listArrayDeserialised();
