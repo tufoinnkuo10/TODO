@@ -120,7 +120,14 @@ input[type="checkbox"] {
 }
 
 .completed {
-  text-decoration: line-through;
+  text-decoration: double line-through;
   opacity: 0.5;
   font-style: italic;
+}
+
+.textdelete {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgb(49, 48, 48);
+  font-family: cursive
 }

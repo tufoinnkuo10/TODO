@@ -11,6 +11,7 @@ const deleteCont = document.querySelector('.delete');
 const deleteText = document.createElement('p');
 const icon = document.createElement('i');
 const enter = document.createElement('i');
+//const line= document.createElement('hr');
 
 input.type = 'text';
 input.setAttribute('placeholder', 'Enter a new task');
@@ -20,8 +21,10 @@ inputCont.appendChild(enter);
 
 titleText.textContent = 'Todays todo';
 icon.classList.add('fas', 'fa-sync');
+deleteText.classList.add('textdelete');
 title.appendChild(titleText);
 title.appendChild(icon);
+//title.appendChild(line);
 
 deleteText.textContent = 'Clear all completed';
 deleteCont.appendChild(deleteText);
