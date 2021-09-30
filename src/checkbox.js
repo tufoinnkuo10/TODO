@@ -2,7 +2,7 @@ const taskCompleted = (e, items) => {
   const complete = e.target;
   if (complete.checked) {
     complete.parentElement.classList.add('completed');
-    for (let i = 0; i < items.length; i+=1) {
+    for (let i = 0; i < items.length; i += 1) {
       // eslint-disable-next-line eqeqeq
       if (complete.parentNode.id == items[i].id) {
         items[i].completed = true;
@@ -11,7 +11,7 @@ const taskCompleted = (e, items) => {
     }
   } else {
     complete.parentElement.classList.remove('completed');
-    for (let i = 0; i < items.length; i+=1) {
+    for (let i = 0; i < items.length; i += 1) {
       // eslint-disable-next-line eqeqeq
       if (complete.parentNode.id == items[i].id) {
         items[i].completed = false;
