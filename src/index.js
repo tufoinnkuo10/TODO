@@ -60,4 +60,14 @@ class Item {
   }
 }
 
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const newItem = new Item();
+    const div = document.createElement('div');
+    const checkbox = document.createElement('input');
+    const text = document.createElement('p');
+    const icon = document.createElement('i');
 
+    
+  }
+});
