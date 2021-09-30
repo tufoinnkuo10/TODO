@@ -5,4 +5,13 @@ export default function displayBox() {
     checkBoxes[i].addEventListener('change', () => {
       // const taskIndex = e.target.getAttribute('data-id');
       // alert(taskIndex);
-      
+      if (checkBoxes[i].checked) {
+        labelList[i].style.textDecoration = 'line-through';
+      } else {
+        labelList[i].style.textDecoration = 'none';
+      }
+    });
+  }
+}
+displayBox();
+// eslint-disable-next-line import/prefer-default-export
