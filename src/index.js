@@ -22,9 +22,9 @@ const taskArray = [
 ];
 
 const showTasks = (tasks) => `
-<li>
-<input type="checkbox" name="" class="static-list" ${tasks.index}">
-<label for="">${tasks.description}<i class="fas fa-ellipsis-v"></i></label>
+<li data-id="${tasks.index}">
+<input type="checkbox" name="" class="static-list" data-id="${tasks.index}" class = "check-list">
+<label class="list" for="">${tasks.description}<i class="fas fa-ellipsis-v"></i></label>
 </li>
 `;
 myTasks.innerHTML = taskArray.map((tasks) => showTasks(tasks)).join('');
