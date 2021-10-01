@@ -131,3 +131,16 @@ input[type="checkbox"] {
   color: rgb(49, 48, 48);
   font-family: cursive;
 }
+
+.refresh {
+  animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
