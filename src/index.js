@@ -1,5 +1,9 @@
 import './style.css';
 import { taskCompleted } from './checkbox.js';
+import { addTask } from './remove.js';
+import { editContent } from './remove.js';
+import { removeOne } from './remove.js';
+import { removeTasks } from './remove.js';
 
 const itemsContainer = document.querySelector('.items-container');
 const input = document.createElement('input');
@@ -86,7 +90,6 @@ input.addEventListener('keydown', (e) => addTask(e, items, input, itemsContainer
 
 deleteText.addEventListener('click', (e) => removeTasks(e, items, deleteCont, Item));
 const refreshPage = () => {
-  // spin after refresh
   icon.classList.add('refresh');
   setTimeout(() => {
     // eslint-disable-next-line no-restricted-globals
@@ -96,47 +99,3 @@ const refreshPage = () => {
 
 const refresh = document.querySelector('.fa-sync');
 refresh.addEventListener('click', refreshPage);
-
-/*input.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    const newItem = new Item();
-    const div = document.createElement('div');
-    const checkbox = document.createElement('input');
-    const text = document.createElement('p');
-    const icon = document.createElement('i');
-
-    div.classList.add('task');
-
-    newItem.description = input.value;
-    newItem.id = items.length + 1;
-    newItem.completed = false;
-
-    checkbox.type = 'checkbox';
-    checkbox.classList.add('checkbox');
-    checkbox.addEventListener('change', taskCompleted);
-
-    text.textContent = input.value;
-
-    icon.classList.add('fas', 'fa-ellipsis-v', 'flex-end');
-
-    div.appendChild(checkbox);
-    div.appendChild(text);
-    div.appendChild(icon);
-
-    itemsContainer.appendChild(div);
-
-    input.value = '';
-    items.push(newItem);
-    localStorage.setItem('items', JSON.stringify(items));
-  }
-});*/
-
-
-
-
-
-
-
-
-
-
