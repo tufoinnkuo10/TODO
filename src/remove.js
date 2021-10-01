@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import { taskCompleted } from './checkbox.js';
 
 const addTask = (e, items, input, itemsContainer, Item) => {

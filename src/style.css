@@ -3,7 +3,7 @@
   padding: 0;
   border: none;
   box-sizing: border-box;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 html,
@@ -63,6 +63,8 @@ body {
 
 i {
   font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .task {
@@ -96,13 +98,25 @@ input[type="checkbox"] {
   margin: 0 10px;
 }
 
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fa-trash-alt:hover {
+  color: #f00;
+}
+
 .rotate {
   transform: rotate(90deg);
   color: #ccc;
-}
-
-.flex-end {
-  align-self: flex-end;
 }
 
 .delete-container {
@@ -119,9 +133,18 @@ input[type="checkbox"] {
   color: #ccc;
 }
 
+.delete:hover {
+  color: #6e2f1b;
+  transition: all ease-out 0.2s;
+}
+
 .completed {
   text-decoration: double line-through;
   opacity: 0.5;
+  font-style: italic;
+}
+
+.completed > input {
   font-style: italic;
 }
 
