@@ -13,6 +13,7 @@ const enter = document.createElement('i');
 //  const line= document.createElement('hr');
 
 input.type = 'text';
+input.autofocus = true;
 input.setAttribute('placeholder', 'Enter a new task');
 enter.classList.add('fas', 'fa-level-down-alt', 'rotate');
 inputCont.appendChild(input);
@@ -37,14 +38,28 @@ if (localStorage.getItem('items')) {
     const div = document.createElement('div');
     div.classList.add('task');
     div.id = `${indexCont += 1}`;
+    const inputContainer = document.createElement('div');
+    inputContainer.classList.add('input-container');
+
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = item.completed;
-    checkbox.addEventListener('change', (e) => taskCompleted(e, items));
-    const p = document.createElement('p');
-    p.textContent = item.description;
+    checkbox.addEventListener('change', (e) => taskCompleted(e, items, deleteCont));
+    
+    const p = document.createElement('input');
+    p.type = 'text';
+    p.setAttribute('readonly', 'readonly');
+    p.value = item.description;
+    p.addEventListener('click', (e) => editContent(e, p, items));
+
+    const iconContainer = document.createElement('div');
+    iconContainer.classList.add('icon-container');
     const icon = document.createElement('i');
     icon.classList.add('fas', 'fa-ellipsis-v', 'flex-end');
+    const icon2 = document.createElement('i');
+    icon2.classList.add('fas', 'fa-trash-alt', 'flex-end');
+    icon2.addEventListener('click', (e) => removeOne(e, items));
+
     div.appendChild(checkbox);
     div.appendChild(p);
     div.appendChild(icon);
@@ -95,3 +110,13 @@ input.addEventListener('keypress', (e) => {
     localStorage.setItem('items', JSON.stringify(items));
   }
 });
+
+
+
+
+
+
+
+
+
+
