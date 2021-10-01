@@ -39,3 +39,33 @@ const addTask = (e, items, input, itemsContainer, Item) => {
   }
 };
 
+const removeTasks = (e, items) => {
+  items = [...JSON.parse(localStorage.getItem('items'))];
+  const checked = document.querySelectorAll('input[type="checkbox"]');
+  checked.forEach((checkbox) => {
+    if (checkbox.checked) {
+      checkbox.parentElement.remove();
+    }
+  });
+
+  for (let i = 0; i < items.length; i+=1) {
+    items.filter((item) => {
+      if (item.completed) {
+        const index = items.indexOf(item);
+        items.splice(index, 1);
+        let i = 0;
+        while (i < items.length) {
+          if (items[i].id > item.id) {
+            items[i].id-=1;
+          }
+          i+=1;
+        }
+        localStorage.setItem('items', JSON.stringify(items));
+      }
+      return item;
+    });
+  }
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
+};
+
