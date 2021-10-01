@@ -87,3 +87,27 @@ const editContent = (e, p, items) => {
   });
 };
 
+const removeOne = (e, items) => {
+  items = [...JSON.parse(localStorage.getItem('items'))];
+  const remove = e.target;
+  items.forEach((item) => {
+    // eslint-disable-next-line eqeqeq
+    if (item.id == remove.parentElement.parentElement.id) {
+      const index = items.indexOf(item);
+      items.splice(index, 1);
+      let i = 0;
+      while (i < items.length) {
+        if (items[i].id > item.id) {
+          items[i].id-=1;
+        }
+        i+=1;
+      }
+    }
+    remove.parentElement.parentElement.remove();
+    localStorage.setItem('items', JSON.stringify(items));
+  });
+};
+
+export {
+  addTask, removeTasks, editContent, removeOne,
+};
