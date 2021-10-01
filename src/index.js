@@ -1,8 +1,8 @@
 import './style.css';
 import { taskCompleted } from './checkbox.js';
 import {
-   addTask, editContent, removeOne, removeTasks,
-   } from './remove.js';
+  addTask, editContent, removeOne, removeTasks,
+} from './remove.js';
 
 const itemsContainer = document.querySelector('.items-container');
 const input = document.createElement('input');
