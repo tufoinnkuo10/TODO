@@ -144,7 +144,7 @@ input[type="checkbox"] {
   font-style: italic;
 }
 
-.completed > input {
+.completed>input {
   font-style: italic;
 }
 
