@@ -1,5 +1,8 @@
 import './style.css';
-import { taskCompleted } from './checkbox.js';
+import taskCompleted from './checkbox.js';
+import {
+  addTask, editContent, removeOne, removeTasks,
+} from './remove.js';
 
 const itemsContainer = document.querySelector('.items-container');
 const input = document.createElement('input');
@@ -13,6 +16,7 @@ const enter = document.createElement('i');
 //  const line= document.createElement('hr');
 
 input.type = 'text';
+input.autofocus = true;
 input.setAttribute('placeholder', 'Enter a new task');
 enter.classList.add('fas', 'fa-level-down-alt', 'rotate');
 inputCont.appendChild(input);
@@ -20,7 +24,7 @@ inputCont.appendChild(enter);
 
 titleText.textContent = 'Todays todo';
 icon.classList.add('fas', 'fa-sync');
-deleteText.classList.add('textdelete');
+//  deleteText.classList.add('textdelete');
 title.appendChild(titleText);
 title.appendChild(icon);
 //  title.appendChild(line);
@@ -37,22 +41,42 @@ if (localStorage.getItem('items')) {
     const div = document.createElement('div');
     div.classList.add('task');
     div.id = `${indexCont += 1}`;
+    const inputContainer = document.createElement('div');
+    inputContainer.classList.add('input-container');
+
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = item.completed;
-    checkbox.addEventListener('change', (e) => taskCompleted(e, items));
-    const p = document.createElement('p');
-    p.textContent = item.description;
+    checkbox.addEventListener('change', (e) => taskCompleted(e, items, deleteCont));
+
+    const p = document.createElement('input');
+    p.type = 'text';
+    p.setAttribute('readonly', 'readonly');
+    p.value = item.description;
+    p.addEventListener('click', (e) => editContent(e, p, items));
+
+    const iconContainer = document.createElement('div');
+    iconContainer.classList.add('icon-container');
     const icon = document.createElement('i');
     icon.classList.add('fas', 'fa-ellipsis-v', 'flex-end');
-    div.appendChild(checkbox);
-    div.appendChild(p);
-    div.appendChild(icon);
+    const icon2 = document.createElement('i');
+    icon2.classList.add('fas', 'fa-trash-alt', 'flex-end');
+    icon2.addEventListener('click', (e) => removeOne(e, items));
+
+    iconContainer.appendChild(icon2);
+    iconContainer.appendChild(icon);
+    inputContainer.appendChild(checkbox);
+    inputContainer.appendChild(p);
+    div.appendChild(inputContainer);
+    div.appendChild(iconContainer);
+
     itemsContainer.appendChild(div);
     if (item.completed) {
       div.classList.add('completed');
     }
   });
+} else {
+  localStorage.setItem('items', JSON.stringify(items));
 }
 class Item {
   constructor() {
@@ -61,37 +85,15 @@ class Item {
     this.id = '';
   }
 }
+input.addEventListener('keydown', (e) => addTask(e, items, input, itemsContainer, Item));
 
-input.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    const newItem = new Item();
-    const div = document.createElement('div');
-    const checkbox = document.createElement('input');
-    const text = document.createElement('p');
-    const icon = document.createElement('i');
+deleteText.addEventListener('click', (e) => removeTasks(e, items, deleteCont, Item));
+const refreshPage = () => {
+  icon.classList.add('refresh');
+  setTimeout(() => {
+    window.location.reload();
+  }, 500);
+};
 
-    div.classList.add('task');
-
-    newItem.description = input.value;
-    newItem.id = items.length + 1;
-    newItem.completed = false;
-
-    checkbox.type = 'checkbox';
-    checkbox.classList.add('checkbox');
-    checkbox.addEventListener('change', taskCompleted);
-
-    text.textContent = input.value;
-
-    icon.classList.add('fas', 'fa-ellipsis-v', 'flex-end');
-
-    div.appendChild(checkbox);
-    div.appendChild(text);
-    div.appendChild(icon);
-
-    itemsContainer.appendChild(div);
-
-    input.value = '';
-    items.push(newItem);
-    localStorage.setItem('items', JSON.stringify(items));
-  }
-});
+const refresh = document.querySelector('.fa-sync');
+refresh.addEventListener('click', refreshPage);
