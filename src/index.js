@@ -1,9 +1,6 @@
 import './style.css';
 import { taskCompleted } from './checkbox.js';
-import { addTask } from './remove.js';
-import { editContent } from './remove.js';
-import { removeOne } from './remove.js';
-import { removeTasks } from './remove.js';
+import { addTask, editContent, removeOne, removeTasks } from './remove.js';
 
 const itemsContainer = document.querySelector('.items-container');
 const input = document.createElement('input');
@@ -25,7 +22,7 @@ inputCont.appendChild(enter);
 
 titleText.textContent = 'Todays todo';
 icon.classList.add('fas', 'fa-sync');
-deleteText.classList.add('textdelete');
+//deleteText.classList.add('textdelete');
 title.appendChild(titleText);
 title.appendChild(icon);
 //  title.appendChild(line);
