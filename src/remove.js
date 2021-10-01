@@ -69,3 +69,21 @@ const removeTasks = (e, items) => {
   location.reload();
 };
 
+const editContent = (e, p, items) => {
+  const edit = e.target;
+  edit.removeAttribute('readonly');
+  edit.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+      edit.setAttribute('readonly', 'readonly');
+      edit.value = p.value;
+      items.forEach((item) => {
+        // eslint-disable-next-line eqeqeq
+        if (item.id == edit.parentElement.parentElement.id) {
+          item.description = edit.value;
+        }
+      });
+      localStorage.setItem('items', JSON.stringify(items));
+    }
+  });
+};
+
