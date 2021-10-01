@@ -1,6 +1,10 @@
-import { taskCompleted } from './checkbox.js';
+import taskCompleted from './checkbox.js';
 
 const addTask = (e, items, input, itemsContainer, Item) => {
+  if (!input.value) {
+    return;
+  }
+
   items = [...JSON.parse(localStorage.getItem('items'))];
   if (e.keyCode === 13) {
     const newItem = new Item();
@@ -33,39 +37,33 @@ const addTask = (e, items, input, itemsContainer, Item) => {
     input.value = '';
     items.push(newItem);
     localStorage.setItem('items', JSON.stringify(items));
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
+    window.location.reload();
   }
 };
 
 const removeTasks = (e, items) => {
   items = [...JSON.parse(localStorage.getItem('items'))];
-  const checked = document.querySelectorAll('input[type="checkbox"]');
-  checked.forEach((checkbox) => {
+  const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+  checkBoxes.forEach((checkbox) => {
     if (checkbox.checked) {
-      checkbox.parentElement.remove();
+      const { id: currentId } = checkbox.parentElement.parentElement;
+      items = items.filter((item) => item.id.toString() !== currentId);
+      // console.log('new items: ', items);
+      checkbox.parentElement.parentElement.remove();
     }
   });
 
-  for (let i = 0; i < items.length; i += 1) {
-    items.filter((item) => {
-      if (item.completed) {
-        const index = items.indexOf(item);
-        items.splice(index, 1);
-        let i = 0;
-        while (i < items.length) {
-          if (items[i].id > item.id) {
-            items[i].id -= 1;
-          }
-          i += 1;
-        }
-        localStorage.setItem('items', JSON.stringify(items));
-      }
-      return item;
-    });
-  }
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
+  items.forEach((item, idx) => {
+    console.log('itme: ', item);
+    item.id = idx + 1;
+  });
+  document.querySelectorAll('input[type="checkbox"]').forEach((elem, idx) => {
+    console.log('elem: ', elem.parentElement.parentElement);
+    elem.parentElement.parentElement.id = idx + 1;
+  });
+
+  localStorage.setItem('items', JSON.stringify(items));
+  window.location.reload();
 };
 
 const editContent = (e, p, items) => {
@@ -76,8 +74,7 @@ const editContent = (e, p, items) => {
       edit.setAttribute('readonly', 'readonly');
       edit.value = p.value;
       items.forEach((item) => {
-        // eslint-disable-next-line eqeqeq
-        if (item.id == edit.parentElement.parentElement.id) {
+        if (item.id.toString() === edit.parentElement.parentElement.id) {
           item.description = edit.value;
         }
       });
@@ -90,8 +87,7 @@ const removeOne = (e, items) => {
   items = [...JSON.parse(localStorage.getItem('items'))];
   const remove = e.target;
   items.forEach((item) => {
-    // eslint-disable-next-line eqeqeq
-    if (item.id == remove.parentElement.parentElement.id) {
+    if (item.id.toString() === remove.parentElement.parentElement.id) {
       const index = items.indexOf(item);
       items.splice(index, 1);
       let i = 0;
@@ -105,6 +101,7 @@ const removeOne = (e, items) => {
     remove.parentElement.parentElement.remove();
     localStorage.setItem('items', JSON.stringify(items));
   });
+  window.location.reload();
 };
 
 export {

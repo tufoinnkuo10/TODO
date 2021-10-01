@@ -1,5 +1,5 @@
 import './style.css';
-import { taskCompleted } from './checkbox.js';
+import taskCompleted from './checkbox.js';
 import {
   addTask, editContent, removeOne, removeTasks,
 } from './remove.js';
@@ -91,8 +91,7 @@ deleteText.addEventListener('click', (e) => removeTasks(e, items, deleteCont, It
 const refreshPage = () => {
   icon.classList.add('refresh');
   setTimeout(() => {
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
+    window.location.reload();
   }, 500);
 };
 
