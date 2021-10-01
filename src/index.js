@@ -49,7 +49,7 @@ if (localStorage.getItem('items')) {
     checkbox.type = 'checkbox';
     checkbox.checked = item.completed;
     checkbox.addEventListener('change', (e) => taskCompleted(e, items, deleteCont));
-    
+
     const p = document.createElement('input');
     p.type = 'text';
     p.setAttribute('readonly', 'readonly');

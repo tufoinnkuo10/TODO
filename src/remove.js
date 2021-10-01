@@ -48,7 +48,7 @@ const removeTasks = (e, items) => {
     }
   });
 
-  for (let i = 0; i < items.length; i+=1) {
+  for (let i = 0; i < items.length; i += 1) {
     items.filter((item) => {
       if (item.completed) {
         const index = items.indexOf(item);
@@ -56,9 +56,9 @@ const removeTasks = (e, items) => {
         let i = 0;
         while (i < items.length) {
           if (items[i].id > item.id) {
-            items[i].id-=1;
+            items[i].id -= 1;
           }
-          i+=1;
+          i += 1;
         }
         localStorage.setItem('items', JSON.stringify(items));
       }
@@ -98,9 +98,9 @@ const removeOne = (e, items) => {
       let i = 0;
       while (i < items.length) {
         if (items[i].id > item.id) {
-          items[i].id-=1;
+          items[i].id -= 1;
         }
-        i+=1;
+        i += 1;
       }
     }
     remove.parentElement.parentElement.remove();
