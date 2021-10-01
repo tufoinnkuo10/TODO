@@ -60,14 +60,20 @@ if (localStorage.getItem('items')) {
     icon2.classList.add('fas', 'fa-trash-alt', 'flex-end');
     icon2.addEventListener('click', (e) => removeOne(e, items));
 
-    div.appendChild(checkbox);
-    div.appendChild(p);
-    div.appendChild(icon);
+    iconContainer.appendChild(icon2);
+    iconContainer.appendChild(icon);
+    inputContainer.appendChild(checkbox);
+    inputContainer.appendChild(p);
+    div.appendChild(inputContainer);
+    div.appendChild(iconContainer);
+
     itemsContainer.appendChild(div);
     if (item.completed) {
       div.classList.add('completed');
     }
   });
+} else {
+  localStorage.setItem('items', JSON.stringify(items));
 }
 class Item {
   constructor() {
@@ -76,8 +82,22 @@ class Item {
     this.id = '';
   }
 }
+input.addEventListener('keydown', (e) => addTask(e, items, input, itemsContainer, Item));
 
-input.addEventListener('keypress', (e) => {
+deleteText.addEventListener('click', (e) => removeTasks(e, items, deleteCont, Item));
+const refreshPage = () => {
+  // spin after refresh
+  icon.classList.add('refresh');
+  setTimeout(() => {
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
+  }, 500);
+};
+
+const refresh = document.querySelector('.fa-sync');
+refresh.addEventListener('click', refreshPage);
+
+/*input.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     const newItem = new Item();
     const div = document.createElement('div');
@@ -109,7 +129,7 @@ input.addEventListener('keypress', (e) => {
     items.push(newItem);
     localStorage.setItem('items', JSON.stringify(items));
   }
-});
+});*/
 
 
 
