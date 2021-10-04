@@ -13,6 +13,8 @@ Additional description about the project and its features.
 - They follow a particular index pattern
 - All activities are called from an aray.
 
+[Live Link](https://tufoinnkuo10.github.io/TODO/)
+
 ## Built With
 
 - ![](https://img.shields.io/badge/Github-blueviolet)
