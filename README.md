@@ -13,7 +13,7 @@ Additional description about the project and its features.
 - They follow a particular index pattern
 - All activities are called from an aray.
 
-[Live Link](https://tufoinnkuo10.github.io/TODO/)
+[Live Link](https://tufoinnkuo10.github.io/TODO/dist/)
 
 ## Built With
 
