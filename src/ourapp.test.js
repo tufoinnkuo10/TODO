@@ -1,7 +1,8 @@
- import {
+import {
   addTodo,
   removeTodos,
 } from './ourapp.js';
+
 describe(' add an item to To-Do-List', () => {
   test('Test addToDo function', () => {
     // Arrange
