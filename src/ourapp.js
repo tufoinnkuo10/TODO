@@ -24,3 +24,21 @@ export const editTodo = (itemsArray, id, newValue) => {
 export const updateCompleted = (item, input) => {
   item.completed = input.checked;
 };
+
+export const clearCompletedTodos = (array) => {
+  let resultArray = array;
+  const todoArray = document.querySelectorAll('.todo-item');
+  todoArray.forEach((div) => {
+    const input = div.querySelector('input');
+    if (input.checked) {
+      div.remove();
+      resultArray = array.filter((something) => {
+        if (something.index.toString() === div.id) {
+          return false;
+        }
+        return true;
+      });
+    }
+  });
+  return resultArray;
+};
