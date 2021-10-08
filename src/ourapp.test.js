@@ -1,6 +1,7 @@
 import {
   addTodo,
   removeTodos,
+  editTodo,
 } from './ourapp.js';
 
 describe(' add an item to To-Do-List', () => {
@@ -29,5 +30,17 @@ describe('remove an item from the To-Do-List', () => {
     const result = removeTodos(itemtodo, id);
     // Assert
     expect(result).toBe(false);
+  });
+});
+
+describe('Edit existing items test', () => {
+  test('Todo edit function', () => {
+    const takenArr = [{ index: 2, description: 'push in this' }];
+    const id2 = '2';
+    const newestItem = 'push this in';
+
+    editTodo(takenArr, id2, newestItem);
+
+    expect(takenArr[0].description).toBe('push this in');
   });
 });
