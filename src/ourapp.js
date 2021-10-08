@@ -20,3 +20,7 @@ export const editTodo = (itemsArray, id, newValue) => {
     }
   });
 };
+
+export const updateCompleted = (item, input) => {
+  item.completed = input.checked;
+};
