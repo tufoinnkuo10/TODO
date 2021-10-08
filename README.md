@@ -7,6 +7,9 @@ To do list
 > This project is designed to display a list of activities to be fufiled in a day. it is made possible with the use of webpack
 > ![screenshot](./image/todo.png)
 
+A picture of the test ran on the todo 
+> ![screenshot](./image/testall.png)
+
 Additional description about the project and its features.
 
 - Activities are in order
