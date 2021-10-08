@@ -12,3 +12,11 @@ export const addTodo = (itemsArray, value) => {
 
   return itemsArray;
 };
+
+export const editTodo = (itemsArray, id, newValue) => {
+  itemsArray.forEach((item) => {
+    if (item.index.toString() === id) {
+      item.description = newValue;
+    }
+  });
+};
