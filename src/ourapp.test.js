@@ -2,6 +2,7 @@ import {
   addTodo,
   removeTodos,
   editTodo,
+  updateCompleted,
 } from './ourapp.js';
 
 describe(' add an item to To-Do-List', () => {
@@ -42,5 +43,16 @@ describe('Edit existing items test', () => {
     editTodo(takenArr, id2, newestItem);
 
     expect(takenArr[0].description).toBe('push this in');
+  });
+});
+
+describe('A test to update items that are completed', () => {
+  test('Test updateCompleted function', () => {
+    const newItem = { completed: true };
+    const newInput = { checked: true };
+
+    updateCompleted(newItem, newInput);
+
+    expect(newItem.completed).toBe(newInput.checked);
   });
 });
