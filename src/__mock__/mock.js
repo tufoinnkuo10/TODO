@@ -59,8 +59,6 @@ const removeTasks = () => {
 
   return items;
 };
-
-
 exports.taskCompleted = taskCompleted;
 exports.taskUncompleted = taskUncompleted;
 exports.removeTasks = removeTasks;
