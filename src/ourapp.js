@@ -9,4 +9,6 @@ export const removeTodos = (something, id) => {
 
 export const addTodo = (itemsArray, value) => {
   itemsArray.push({ completed: false, description: value, index: itemsArray.length + 1 });
+
+  return itemsArray;
 };

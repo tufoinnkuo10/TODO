@@ -6,17 +6,17 @@ import {
 describe(' add an item to To-Do-List', () => {
   test('Test addToDo function', () => {
     // Arrange
-    const givenArr = [1];
+    let givenArr = [1, 2, 3, 4];
 
     // Act
-    addTodo(givenArr, 'Added to the listli');
+    givenArr = addTodo(givenArr, 'Added to the listli');
 
     // Assert
-    const firstElement = givenArr[1];
-    expect(givenArr).toHaveLength(2);
-    expect(firstElement.completed).toBe(false);
-    expect(firstElement.description).toBe('Added to the listli');
-    expect(firstElement.index).toBe(2);
+    const latestElement = givenArr[givenArr.length - 1];
+    expect(givenArr).toHaveLength(5);
+    expect(latestElement.completed).toBe(false);
+    expect(latestElement.description).toBe('Added to the listli');
+    expect(latestElement.index).toBe(givenArr.length);
   });
 });
 
